@@ -10,6 +10,7 @@ import ProductCarousel from "../components/ProductCarousel";
 import Meta from "../components/Meta";
 import { listProducts } from "../actions/productActions";
 
+
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
 
@@ -21,8 +22,10 @@ const HomeScreen = ({ match }) => {
   const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
-  }, [dispatch, keyword, pageNumber]);
+    dispatch(listProducts())
+  }, [dispatch]);
+
+  
 
   return (
     <>
